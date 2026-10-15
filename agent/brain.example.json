@@ -1,0 +1,27 @@
+{
+  "max_steps": 40,
+  "max_model_calls": 100,
+  "max_seconds": 900,
+  "max_repeat_actions": 4,
+  "approve_medium": false,
+  "block_sensitive_typing": true,
+  "obs_max_elements": 45,
+  "prompt_token_budget": 6000,
+  "router": {
+    "policy": "LOCAL_FIRST",
+    "strong_order": ["gemini", "freellmapi"],
+    "order": ["local", "gemini", "freellmapi"],
+    "complexity_threshold": 2.0,
+    "escalate_after_failures": 2,
+    "sticky_steps": 3,
+    "weights": { "first_step": 1.0, "failure": 1.5, "tool_error": 1.0, "stale_recovery": 1.0, "many_elements": 1.0, "text_heavy": 1.0, "vision": 3.0, "signal": 1.5 }
+  },
+  "providers": {
+    "local": { "runtime": "auto", "model": "qwen3:8b", "url": "http://127.0.0.1:11434", "num_ctx": 8192, "timeout_s": 240 },
+    "gemini": { "model": "gemini-3.5-flash-lite", "timeout_s": 60 },
+    "freellmapi": { "url": "http://localhost:3001/v1", "model": "auto", "timeout_s": 90 },
+    "openai_compat": { "enabled": false, "url": "", "model": "" }
+  },
+  "business": { "enabled": false, "intent_detection": true, "audit_retention_days": 365 },
+  "pricing": { "my-custom-model": { "input": 0.10, "output": 0.40 } }
+}

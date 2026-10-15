@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OCTG Fixture Home</title>
+<style>
+  body { font: 16px system-ui, sans-serif; margin: 20px; max-width: 760px; }
+  label { display: block; margin-top: 8px; }
+  #inner { height: 120px; overflow: auto; border: 1px solid #888; width: 300px; }
+  #inner div { height: 500px; }
+  #overlay-wrap { position: relative; width: 180px; height: 40px; margin: 10px 0; }
+  #cover { position: absolute; inset: 0; background: rgba(255, 0, 0, .25); }
+  .pointer { cursor: pointer; padding: 6px; border: 1px dashed #666; display: inline-block; margin: 4px 0; }
+  .vh { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .tall { height: 2200px; background: linear-gradient(#fff, #cde); }
+  #editable { border: 1px solid #888; min-height: 28px; padding: 4px; }
+  #out, #fileout, #keyout { min-height: 22px; font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>Fixture Home</h1>
+
+<form id="f1" action="submitted.html" method="get">
+  <label for="name">Full name</label><input id="name" name="name" type="text" placeholder="Your name">
+  <label for="email">Email</label><input id="email" name="email" type="email">
+  <label for="pw">Password</label><input id="pw" name="pw" type="password">
+  <label for="card">Card number</label><input id="card" name="card_number" autocomplete="cc-number">
+  <label for="notes">Notes</label><textarea id="notes" name="notes"></textarea>
+  <label for="country">Country</label>
+  <select id="country" name="country">
+    <option value="">Choose…</option><option value="us">United States</option><option value="in">India</option><option value="de">Germany</option>
+  </select>
+  <label><input type="checkbox" id="agree" name="agree"> I agree to the terms</label>
+  <label><input type="radio" name="plan" value="basic" id="plan-basic"> Basic plan</label>
+  <label><input type="radio" name="plan" value="pro" id="plan-pro"> Pro plan</label>
+  <button type="submit" id="submit">Send form</button>
+</form>
+
+<p>
+  <button id="btn-click" onclick="document.getElementById('out').textContent='Clicked!'">Click me</button>
+  <button id="btn-delete" onclick="document.getElementById('out').textContent='Deleted (fake)'">Delete account</button>
+  <button id="btn-vanish" onclick="this.remove()">Vanish</button>
+  <button id="btn-rename" onclick="this.textContent='Renamed'">Rename me</button>
+  <button id="btn-nav" onclick="location.assign('page2.html')">Navigate via script</button>
+  <button id="btn-spa" onclick="history.pushState({}, '', '#/spa'); document.getElementById('out').textContent='SPA route'">SPA route</button>
+  <button id="btn-delayed" onclick="setTimeout(function(){document.getElementById('out').textContent='Delayed text arrived'}, 700)">Show delayed text</button>
+  <button id="btn-dialog" onclick="document.getElementById('dlg').hidden=false">Open dialog</button>
+</p>
+<div id="out" aria-live="polite"></div>
+
+<div id="dlg" role="dialog" aria-label="Confirm action" hidden>
+  <p>Are you sure about this?</p>
+  <button onclick="this.parentElement.hidden=true">Close dialog</button>
+</div>
+
+<p><a href="page2.html" id="lnk-page2">Go to page two</a> |
+   <a href="page2.html?from=blank" target="_blank" id="lnk-blank">Open page two in a new tab</a></p>
+
+<div id="overlay-wrap"><button id="covered" onclick="document.getElementById('out').textContent='Covered clicked'">Covered button</button><div id="cover"></div></div>
+
+<div id="editable" contenteditable="true" role="textbox" aria-label="Rich editor"></div>
+<div class="pointer" id="custom">Custom clickable</div>
+
+<label for="keybox">Key box</label><input id="keybox" type="text"><div id="keyout"></div>
+
+<p>Files:</p>
+<input type="file" id="file-visible" aria-label="Pick a document">
+<label class="pointer" for="file-hidden">Choose logos</label><input type="file" id="file-hidden" class="vh" multiple>
+<div id="fileout"></div>
+
+<div id="inner"><div>Inner scroll content</div></div>
+<iframe src="frame.html" id="frame1" title="Embedded frame" width="420" height="90"></iframe>
+<div id="shadow-host"></div>
+
+<div class="tall"><p>Tall filler content.</p></div>
+<p id="bottom-marker">Footer marker text</p>
+
+<script>
+  document.getElementById('custom').addEventListener('click', function () { document.getElementById('out').textContent = 'Custom clicked'; });
+  function showFiles(e) { document.getElementById('fileout').textContent = 'Files: ' + Array.from(e.target.files).map(function (f) { return f.name + ' (' + f.size + ')'; }).join(', '); }
+  document.getElementById('file-visible').addEventListener('change', showFiles);
+  document.getElementById('file-hidden').addEventListener('change', showFiles);
+  document.getElementById('keybox').addEventListener('keydown', function (e) { document.getElementById('keyout').textContent = 'Key: ' + e.key; });
+  var root = document.getElementById('shadow-host').attachShadow({ mode: 'open' });
+  root.innerHTML = '<button id="sb">Shadow button</button>';
+  root.getElementById('sb').addEventListener('click', function () { document.getElementById('out').textContent = 'Shadow clicked'; });
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+{
+  "browser": "Chrome/155.0.8059.39",
+  "results": [
+    {
+      "id": "01",
+      "name": "type + click + verify + finish on a real page, via the dispatcher",
+      "passed": true,
+      "seconds": 1.2
+    },
+    {
+      "id": "02",
+      "name": "real stale element: the page is re-rendered between observation and click",
+      "passed": true,
+      "seconds": 0.9
+    },
+    {
+      "id": "03",
+      "name": "new tab opened by a click: the agent notices it and switches back",
+      "passed": true,
+      "seconds": 1.7
+    },
+    {
+      "id": "04",
+      "name": "approval gate: approve, deny, and stop while waiting",
+      "passed": true,
+      "seconds": 3.0
+    },
+    {
+      "id": "05",
+      "name": "pause freezes the page, resume continues, stop cancels a slow model call",
+      "passed": true,
+      "seconds": 7.9
+    },
+    {
+      "id": "06",
+      "name": "restricted start page: the agent navigates away; insisting on the page fails cleanly",
+      "passed": true,
+      "seconds": 2.0
+    },
+    {
+      "id": "07",
+      "name": "login form: credentials are never typed; the task waits for the user and resumes",
+      "passed": true,
+      "seconds": 0.5
+    },
+    {
+      "id": "08",
+      "name": "CAPTCHA page: the agent stops and hands over; no model call while it blocks",
+      "passed": true,
+      "seconds": 1.0
+    },
+    {
+      "id": "09",
+      "name": "provider failure falls back to the next provider in a real task",
+      "passed": true,
+      "seconds": 0.9
+    },
+    {
+      "id": "10",
+      "name": "side panel drives a task end to end (start, approval buttons, result)",
+      "passed": true,
+      "seconds": 6.4
+    },
+    {
+      "id": "11",
+      "name": "long page: the agent jumps to the text with find_text instead of scrolling blindly, then reads around it",
+      "passed": true,
+      "seconds": 1.4
+    },
+    {
+      "id": "12",
+      "name": "voice input (Phase 2.1): mic -> Task box -> the EXISTING Run path -> task engine; empty speech and risky commands behave like typed ones",
+      "passed": true,
+      "seconds": 15.9
+    },
+    {
+      "id": "13",
+      "name": "Business Brain: 'Fill in my business name and business address.' -> tokens -> exact values typed in real Chrome; nothing private reaches the model, logs, history or audit",
+      "passed": true,
+      "seconds": 2.4
+    },
+    {
+      "id": "14",
+      "name": "Business Brain via VOICE: spoken transcript -> existing Run path -> context resolver -> exact values typed (scripted recogniser, real microphone track)",
+      "passed": true,
+      "seconds": 9.1
+    },
+    {
+      "id": "15",
+      "name": "Business Brain panel in real Chrome: masked profile, explicit temporary reveal, Confirm for an unverified value, tabs, terminal-only access changes",
+      "passed": true,
+      "seconds": 5.0
+    },
+    {
+      "id": "17",
+      "name": "Client Brain: 'Fill in the selected client's business information.' for client A then client B in real Chrome: the right client's exact values, no cross-client or owner data anywhere",
+      "passed": true,
+      "seconds": 5.4
+    },
+    {
+      "id": "18",
+      "name": "Client Brain panel in real Chrome: Clients tab, masked client profile, client documents/SEO views, per-task Client box, picking the client when the task asks",
+      "passed": true,
+      "seconds": 7.4
+    },
+    {
+      "id": "16",
+      "name": "Business Brain feature flag OFF (the default): no section, no per-task switch, no database, a token is refused",
+      "passed": true,
+      "skipped": true,
+      "seconds": 0
+    },
+    {
+      "id": "19",
+      "name": "Spreadsheet import -> Client Brain -> a client task in real Chrome: the workbook's exact values are typed; the instruction-like cells stay data; no value reaches the model, logs, history or audit",
+      "passed": true,
+      "seconds": 1.6
+    },
+    {
+      "id": "20",
+      "name": "Spreadsheet import panel in real Chrome: the Imports tab previews a workbook chosen through a real file input (masked, nothing saved) and offers no way to import",
+      "passed": true,
+      "seconds": 4.7
+    },
+    {
+      "id": "21",
+      "name": "Knowledge Hub: the browser agent (and so a model) cannot read, click, type, scroll or screenshot the Hub in real Chrome; a task that tries fails cleanly",
+      "passed": true,
+      "seconds": 2.0
+    }
+  ]
+}

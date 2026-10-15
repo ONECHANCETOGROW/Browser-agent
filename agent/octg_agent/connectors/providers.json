@@ -1,0 +1,27 @@
+{
+  "_note": "Provider facts as DATA (names, API hosts, the owner's setup steps). The Python code stays provider-neutral; nothing here is logic.",
+  "google_search_console": {
+    "name": "Google Search Console",
+    "short": "Search Console",
+    "hosts": ["oauth2.googleapis.com", "www.googleapis.com"],
+    "inspect_host": "searchconsole.googleapis.com",
+    "steps": [
+      "In Google Cloud Console: create (or pick) a project and enable the 'Google Search Console API'.",
+      "Create a service account in that project and a JSON key for it; save the file as {folder}\\gsc_service_account.json (nobody else needs to see it).",
+      "In Search Console, open this client's property -> Settings -> Users and permissions -> Add user: add the service account's e-mail ({identity}) with at least Restricted permission. (If the property belongs to the client, ask them to add that e-mail.)",
+      "Alternative without a service account: `python -m octg_agent connectors gsc-login --client-secret <OAuth client JSON>` signs in as your own Google user and stores a refresh token."
+    ],
+    "how": "a Google service-account key (add its e-mail as a user of each property in Search Console) or an OAuth token from `python -m octg_agent connectors gsc-login`"
+  },
+  "bing_webmaster_tools": {
+    "name": "Bing Webmaster Tools",
+    "short": "Bing Webmaster",
+    "hosts": ["ssl.bing.com"],
+    "steps": [
+      "In Bing Webmaster Tools (signed in as the account that has this site verified): Settings -> API access -> generate an API key.",
+      "Save the key as {folder}\\bing_webmaster_api_key.txt (the file contains only the key)."
+    ],
+    "how": "an API key generated in Bing Webmaster Tools (Settings -> API access)"
+  },
+  "map_step": "In the Knowledge Hub: AI & Approvals -> Data sources -> {label} -> Map a property -> choose this client and its property, type your PIN. (Or ask the collaborator to run connectors.suggest_mapping to see which property matches the client's domain.)"
+}

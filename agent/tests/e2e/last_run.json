@@ -1,0 +1,240 @@
+{
+  "browser": "Chrome/149.0.7827.55",
+  "results": [
+    {
+      "id": "01",
+      "name": "current tab: id, url, title, supported",
+      "criteria": [
+        1,
+        4
+      ],
+      "passed": true,
+      "seconds": 0.0
+    },
+    {
+      "id": "02",
+      "name": "all tabs listed, exactly one active, browser state overview",
+      "criteria": [
+        2,
+        3
+      ],
+      "passed": true,
+      "seconds": 1.05
+    },
+    {
+      "id": "03",
+      "name": "inspect page: structure, roles, shadow DOM, iframe, hidden file input",
+      "criteria": [
+        5,
+        6
+      ],
+      "passed": true,
+      "seconds": 0.43
+    },
+    {
+      "id": "04",
+      "name": "read visible text: viewport vs whole page",
+      "criteria": [
+        5
+      ],
+      "passed": true,
+      "seconds": 0.4
+    },
+    {
+      "id": "05",
+      "name": "navigate: load, redirect flag, hash change, failure is reported",
+      "criteria": [
+        7,
+        18,
+        19
+      ],
+      "passed": true,
+      "seconds": 1.03
+    },
+    {
+      "id": "06",
+      "name": "tabs: open, switch (id and match), close, last-tab protection",
+      "criteria": [
+        8,
+        9,
+        10
+      ],
+      "passed": true,
+      "seconds": 1.27
+    },
+    {
+      "id": "07",
+      "name": "back / forward / no history",
+      "criteria": [
+        11
+      ],
+      "passed": true,
+      "seconds": 1.37
+    },
+    {
+      "id": "08",
+      "name": "click: buttons, links, new-tab links, overlays, shadow DOM, custom widgets, coordinates",
+      "criteria": [
+        12,
+        18,
+        19
+      ],
+      "passed": true,
+      "seconds": 4.77
+    },
+    {
+      "id": "09",
+      "name": "type: replace/append, keys mode, textarea, contenteditable, password masking, iframe",
+      "criteria": [
+        13,
+        19
+      ],
+      "passed": true,
+      "seconds": 3.69
+    },
+    {
+      "id": "10",
+      "name": "select / check / uncheck / radio",
+      "criteria": [
+        14,
+        19
+      ],
+      "passed": true,
+      "seconds": 2.76
+    },
+    {
+      "id": "11",
+      "name": "scroll: by amount, to bottom/top, limits, element into view",
+      "criteria": [
+        15,
+        19
+      ],
+      "passed": true,
+      "seconds": 2.19
+    },
+    {
+      "id": "12",
+      "name": "screenshot: PNG/JPEG saved locally, background tab activated",
+      "criteria": [
+        16
+      ],
+      "passed": true,
+      "seconds": 2.09
+    },
+    {
+      "id": "13",
+      "name": "upload from authorized folder via file input (no debugger)",
+      "criteria": [
+        17,
+        19
+      ],
+      "passed": true,
+      "seconds": 1.11
+    },
+    {
+      "id": "14",
+      "name": "detect page/navigation changes: events, SPA route, dialogs, downloads",
+      "criteria": [
+        18,
+        19
+      ],
+      "passed": true,
+      "seconds": 2.21
+    },
+    {
+      "id": "15",
+      "name": "verify + wait: pass, fail, timeout, polling",
+      "criteria": [
+        19
+      ],
+      "passed": true,
+      "seconds": 2.49
+    },
+    {
+      "id": "16",
+      "name": "STALE_ELEMENT: superseded, detached, changed, document replaced, unknown id",
+      "criteria": [
+        5,
+        19
+      ],
+      "passed": true,
+      "seconds": 1.26
+    },
+    {
+      "id": "17",
+      "name": "press_key: Enter submits, Tab moves focus, typing keys, risk tag",
+      "criteria": [
+        12,
+        13,
+        18
+      ],
+      "passed": true,
+      "seconds": 3.17
+    },
+    {
+      "id": "18",
+      "name": "risk tags attached to responses (not enforced in Phase 1)",
+      "criteria": [
+        20
+      ],
+      "passed": true,
+      "seconds": 1.63
+    },
+    {
+      "id": "19",
+      "name": "unsupported Chrome pages are rejected, never reported as success",
+      "criteria": [
+        22
+      ],
+      "passed": true,
+      "seconds": 4.45
+    },
+    {
+      "id": "20",
+      "name": "side panel shows live status, task and restricted-page warning",
+      "criteria": [
+        20
+      ],
+      "passed": true,
+      "seconds": 5.29
+    },
+    {
+      "id": "21",
+      "name": "downloaded file can be saved only into an authorized folder",
+      "criteria": [
+        17
+      ],
+      "passed": true,
+      "seconds": 0.89
+    },
+    {
+      "id": "22",
+      "name": "reconnect: agent restart is survived without touching the browser",
+      "criteria": [
+        21
+      ],
+      "passed": true,
+      "seconds": 4.49
+    },
+    {
+      "id": "26",
+      "name": "find_text: jump to text near the bottom of a long page; context, element ids, hidden content, secrets, frames; stale rules intact",
+      "criteria": [
+        5,
+        15,
+        19
+      ],
+      "passed": true,
+      "seconds": 11.13
+    },
+    {
+      "id": "23",
+      "name": "every response is structured; logs have required fields and no secrets",
+      "criteria": [
+        20
+      ],
+      "passed": true,
+      "seconds": 0.01
+    }
+  ]
+}

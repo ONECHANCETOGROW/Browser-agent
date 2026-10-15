@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OCTG: allow microphone</title>
+  <link rel="stylesheet" href="panel.css">
+  <style>body { max-width: 520px; margin: 40px auto; }</style>
+</head>
+<body>
+  <h1>Allow the microphone</h1>
+  <p>Voice input in the OCTG side panel needs microphone access. Chrome shows its permission prompt for pages like this one; once you allow it here, the
+     side panel can use the microphone too.</p>
+  <p class="muted">OCTG turns your speech into text on this computer and does not record, store or upload audio.</p>
+  <div class="row"><button id="allow" type="button">Allow microphone</button></div>
+  <div id="msg" class="muted" role="status" aria-live="polite"></div>
+  <script src="mic_permission.js"></script>
+</body>
+</html>

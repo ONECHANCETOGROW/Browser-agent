@@ -1,0 +1,16 @@
+[project]
+name = "octg-agent"
+version = "0.1.0"
+description = "OCTG local browser-control agent (Phase 1): generic, website-agnostic, local-first."
+requires-python = ">=3.10"
+dependencies = ["aiohttp>=3.9"]
+
+[project.scripts]
+octg-agent = "octg_agent.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["octg_agent*"]

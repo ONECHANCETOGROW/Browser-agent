@@ -1,0 +1,35 @@
+{
+  "browser": "Chrome/149.0.7827.55",
+  "results": [
+    {
+      "id": "L1",
+      "name": "REAL local model: search a generic store fixture and stop on the results page",
+      "passed": true,
+      "seconds": 37.1
+    },
+    {
+      "id": "L2",
+      "name": "REAL local model: fill a field and press a button on a fixture page",
+      "passed": true,
+      "seconds": 6.5
+    },
+    {
+      "id": "L3",
+      "name": "REAL local model: Business Brain tokens on the synthetic registration page (no value ever reaches the model)",
+      "passed": true,
+      "seconds": 5.1
+    },
+    {
+      "id": "L4",
+      "name": "REAL local model: a client-scoped task on the synthetic page (only that client's values; no value reaches the model)",
+      "passed": true,
+      "seconds": 5.1
+    },
+    {
+      "id": "L5",
+      "name": "REAL local model: workbook import -> Client Brain -> a client task on the synthetic page (the model never sees a workbook value)",
+      "passed": true,
+      "seconds": 4.9
+    }
+  ]
+}

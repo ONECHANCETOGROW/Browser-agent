@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Fixture Store</title>
+<style>body{font:16px system-ui;margin:20px} .item{padding:6px;border-bottom:1px solid #ddd}</style></head>
+<body>
+<header><a href="search.html">Fixture Store</a> · <a href="page2.html">Help</a> · <a href="login.html">Login</a></header>
+<form action="search.html" method="get" role="search">
+  <input type="search" name="q" aria-label="Search for products, brands and more" placeholder="Search for products, brands and more">
+  <button type="submit">Search</button>
+</form>
+<main id="main"><p>Welcome. Use the search box to find products.</p></main>
+<script>
+  var q = new URLSearchParams(location.search).get('q');
+  if (q) {
+    document.title = q + ' - Search Results - Fixture Store';
+    var m = document.getElementById('main');
+    m.innerHTML = '<h1>Search results for "' + q.replace(/[<>&]/g, '') + '"</h1>';
+    for (var i = 1; i <= 6; i++) { var d = document.createElement('div'); d.className = 'item'; d.innerHTML = '<a href="search.html?item=' + i + '">' + q.replace(/[<>&]/g, '') + ' model ' + i + '</a> — $' + (20 + i * 7); m.appendChild(d); }
+  }
+</script>
+</body>
+</html>

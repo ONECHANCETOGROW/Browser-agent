@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OCTG Long Fixture</title>
+<style>
+  body { font: 16px/1.5 sans-serif; margin: 0; }
+  header { position: fixed; top: 0; left: 0; right: 0; height: 56px; background: #223; color: #fff; padding: 12px 16px; z-index: 5; box-sizing: border-box; }
+  header a { color: #9cf; margin-left: 12px; }
+  main { padding: 72px 16px 40px; }
+  section { min-height: 900px; border-bottom: 1px solid #ccc; }
+  #box { height: 150px; overflow: auto; border: 1px solid #888; width: 420px; }
+  #box .spacer { height: 900px; }
+  iframe { width: 420px; height: 200px; border: 1px solid #888; }
+</style>
+</head>
+<body>
+<header>OCTG long fixture <a href="#s1" id="top-link">Start</a></header>
+<main>
+  <h1>Operations handbook</h1>
+  <nav aria-label="Contents">
+    <ul>
+      <li><a href="#s57">Maintenance window</a></li>
+      <li><a href="#s2">Overview</a></li>
+    </ul>
+  </nav>
+  <p id="status">Box not scrolled.</p>
+  <div id="sections"></div>
+</main>
+<script>
+  // 60 tall sections (~54,000 px) with a few special ones. Built at load so the rendered DOM is ordinary page content.
+  const root = document.getElementById('sections');
+  const filler = (n) => `Routine paragraph ${n}: nothing of interest is written here, it only adds height to the page.`;
+  const special = {
+    5: '<div id="shadow-host"></div>',
+    8: '<div id="box"><div class="spacer"></div><p>deep-in-box marker</p></div>',
+    12: '<iframe id="frame" src="long_frame.html" title="inner"></iframe>',
+    20: '<div style="display:none">hidden-only phrase</div><details><summary>More details</summary><p>inside-details phrase</p></details>',
+    25: '<form onsubmit="return false"><input type="password" id="pw" value="s3cr3t-pass-value"><textarea id="ta">textarea secret content</textarea>' +
+        '<input type="text" id="tx" value="typed visible input value"><select id="sel"><option>option-label-text</option></select></form>',
+    30: '<p>Release code NAME-alpha and name-ALPHA.</p><p>The cat sat. See the category list.</p><p>Reserve the <b>emergency</b> <i>rollback</i> slot before 18:00.</p>',
+    57: '<p>The quarterly maintenance window is Thursday at 03:00 UTC for the EU cluster.</p>' +
+        '<button id="ack" onclick="document.getElementById(\'status\').textContent=\'Acknowledged\'">Acknowledge maintenance window</button>',
+    60: '<p>End of handbook marker.</p>',
+  };
+  const titles = { 57: 'Maintenance window' };
+  for (let n = 1; n <= 60; n++) {
+    const s = document.createElement('section');
+    s.id = 's' + n;
+    s.innerHTML = `<h2>${titles[n] || 'Section ' + n + ': Topic ' + n}</h2><p>${filler(n)}</p>${special[n] || ''}<p>${filler(n + 1000)}</p>`;
+    root.appendChild(s);
+  }
+  const host = document.getElementById('shadow-host');
+  host.attachShadow({ mode: 'open' }).innerHTML = '<p>shadow-only phrase lives here</p>';
+  const box = document.getElementById('box');
+  box.addEventListener('scroll', () => { if (box.scrollTop > 0) document.getElementById('status').textContent = 'Box scrolled.'; });
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "OCTG Browser Agent",
+  "version": "0.1.0",
+  "description": "Generic, website-agnostic browser control for the local OCTG agent. Talks only to 127.0.0.1.",
+  "minimum_chrome_version": "116",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm8p0NRQszq3WEyy+U9a2ePZq9Py5ZeDj7RowID3QWqbeVlPFvyJL68Djj+ATTMyATY7sLMh6+qM0eZECIEH2h7wxxA6XWqzkoHaqe/obqsKm+VdOSl8g0cOxfcE8excltkZaCgkCmGJiGrvleLKJTJSgmJW1Gp0PAC77ldwet6ROlsJUyVBX7RyFYXCv4co7z9K61EuHUmzIVSPp9AfaM/MLWjVVu2NINJ6fI2HsAHo8VqeNBoVkkhBfUtIUvE/UzazLy0P5yJdDE4h2ca32pk0pk4fT1zgtH1PTUDCHrQi5eD98kdWcdCsuJbfeVpkhQUFIEwM9IfLeNcN85r1lYQIDAQAB",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "webNavigation",
+    "sidePanel",
+    "storage",
+    "alarms",
+    "downloads"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background/service_worker.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/panel.html"
+  },
+  "action": {
+    "default_title": "OCTG Browser Agent"
+  }
+}

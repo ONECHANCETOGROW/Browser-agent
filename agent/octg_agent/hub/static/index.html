@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>OCTG Knowledge Hub</title>
+  <link rel="icon" href="/hub/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/hub/static/hub.css">
+</head>
+<body>
+  <a class="skip" href="#view">Skip to content</a>
+  <div id="app" class="app" hidden>
+    <aside class="side" id="side" aria-label="Main">
+      <div class="brand"><span class="logo" aria-hidden="true"></span><div><strong>OCTG</strong><span>Knowledge Hub</span></div></div>
+      <nav id="nav"></nav>
+      <div class="side-foot">
+        <div class="local"><span class="dot"></span> Runs only on this computer</div>
+        <button type="button" class="link" id="lock">Lock the Hub</button>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="top">
+        <button type="button" class="menu" id="menu" aria-label="Menu" aria-expanded="false">Menu</button>
+        <div class="scope" id="scopeBar" aria-live="polite"></div>
+        <div class="search">
+          <label class="sr" for="q">Search your business and client information</label>
+          <input id="q" type="search" placeholder="Search clients, services, locations, keywords, sources…" autocomplete="off" maxlength="80">
+          <div id="results" class="results" hidden role="listbox"></div>
+        </div>
+      </header>
+      <main id="view" tabindex="-1" aria-live="polite"></main>
+    </div>
+  </div>
+  <div id="login" class="login" hidden></div>
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+  <dialog id="modal" class="modal"></dialog>
+  <noscript><p style="padding:2rem">The Knowledge Hub needs JavaScript (it is a local page; nothing is loaded from the internet).</p></noscript>
+  <script type="module" src="/hub/static/app.js"></script>
+</body>
+</html>

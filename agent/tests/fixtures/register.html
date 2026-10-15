@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Registration form (synthetic test page)</title></head>
+<body>
+  <h1>Registration form</h1>
+  <p>This is a synthetic page for testing. It does not submit anything anywhere.</p>
+  <form onsubmit="return false">
+    <p><label>Business Name <input type="text" id="bn" name="business_name"></label></p>
+    <p><label>Business Address <input type="text" id="ba" name="business_address"></label></p>
+    <p><label>GSTIN Number <input type="text" id="gst" name="gstin_number"></label></p>
+    <p><label>Newsletter signup <input type="text" id="news" name="newsletter"></label></p>
+    <p><button type="button" id="save" onclick="document.getElementById('msg').textContent='Draft saved (fake)'">Save draft</button></p>
+  </form>
+  <p id="msg"></p>
+</body>
+</html>

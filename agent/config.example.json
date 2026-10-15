@@ -1,0 +1,9 @@
+{
+  "host": "127.0.0.1",
+  "port": 8765,
+  "extension_id": "YOUR_EXTENSION_ID",
+  "action_timeout_s": 30,
+  "max_upload_bytes": 15728640,
+  "max_events": 500,
+  "log_level": "INFO"
+}

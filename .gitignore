@@ -1,0 +1,13 @@
+﻿data/
+agent/data/
+agent/config.json
+*.token
+secrets.json
+hub_pin.json
+*.db
+*.db-journal
+__pycache__/
+*.pyc
+*.egg-info/
+node_modules/
+.env

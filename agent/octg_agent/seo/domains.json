@@ -1,0 +1,6 @@
+{
+  "_comment": "Domain lists used to CLASSIFY search results. Data, not logic: edit freely. engine_hosts = links that belong to the search engine itself (excluded from organic results); consent_hosts = cookie/consent walls; directories = listing/review/social sites (classified 'directory', not 'competitor').",
+  "engine_hosts": ["google.", "gstatic.", "googleusercontent.", "googleadservices.", "doubleclick.", "bing.com", "microsoft.com", "msn.com", "live.com", "duckduckgo.com", "youtube.com/results", "webcache.", "translate.goog"],
+  "consent_hosts": ["consent.google", "consent.youtube"],
+  "directories": ["yelp.", "facebook.", "instagram.", "tripadvisor.", "yellowpages.", "bbb.org", "mapquest.", "angi.", "homeadvisor.", "thumbtack.", "nextdoor.", "foursquare.", "reddit.", "wikipedia.", "linkedin.", "youtube.", "x.com", "twitter.", "tiktok.", "pinterest.", "manta.", "chamberofcommerce.", "porch.", "houzz.", "superpages.", "cylex", "hotfrog.", "expertise.com", "birdeye.", "groupon.", "leafly.", "untappd."]
+}
